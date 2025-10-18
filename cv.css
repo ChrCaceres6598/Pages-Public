@@ -1,0 +1,300 @@
+/* === ESTILO KALI LINYX PARA CV === */
+:root {
+    --fondo-oscuro: #0C0C0C;
+    --azul-principal: #557CF2;
+    --rosa-accento: #FF3E7F;
+    --verde-terminal: #00FF88;
+    --texto-blanco: #E0E0E0;
+    --borde-gris: #2D2D2D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo-oscuro);
+    color: var(--texto-blanco);
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    display: flex;
+    gap: 30px;
+}
+
+.columna-izquierda {
+    flex: 2;
+}
+
+.columna-derecha {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Encabezado */
+.encabezado {
+    text-align: left;
+    border-bottom: 2px solid var(--azul-principal);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.nombre {
+    font-family: Arial, sans-serif;
+    color: var(--azul-principal);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.titulo-profesional {
+    font-family: Arial, sans-serif;
+    color: var(--rosa-accento);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Contacto en el encabezado */
+.encabezado .seccion-lateral {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.encabezado .contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.encabezado .item-contacto {
+    color: var(--texto-blanco);
+    font-size: 0.9rem;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Secciones */
+.seccion {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--borde-gris);
+    border-radius: 5px;
+}
+
+.seccion-lateral {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--borde-gris);
+    border-radius: 5px;
+}
+
+.titulo-seccion {
+    font-family: Arial, sans-serif;
+    color: var(--azul-principal);
+    border-left: 4px solid var(--rosa-accento);
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Experiencia Laboral */
+.trabajo, .educacion {
+    margin-bottom: 20px;
+}
+
+.puesto, .grado {
+    font-family: Arial, sans-serif;
+    color: var(--verde-terminal);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.empresa, .institucion {
+    color: var(--rosa-accento);
+    font-style: italic;
+}
+
+.fecha {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.referencia {
+    color: var(--verde-terminal);
+    font-size: 0.9rem;
+}
+
+/* Listas */
+.lista-responsabilidades {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.lista-responsabilidades li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--borde-gris);
+    position: relative;
+    padding-left: 20px;
+}
+
+.lista-responsabilidades li:before {
+    content: "▸ ";
+    color: var(--verde-terminal);
+    position: absolute;
+    left: 0;
+}
+
+.lista-habilidades, .lista-certificaciones {
+    list-style: none;
+}
+
+.lista-habilidades li, .lista-certificaciones li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--borde-gris);
+    position: relative;
+    padding-left: 20px;
+}
+
+.lista-habilidades li:before, .lista-certificaciones li:before {
+    content: "• ";
+    color: var(--verde-terminal);
+    position: absolute;
+    left: 0;
+}
+
+.lista-certificaciones em {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Foto de perfil - MEJORADA */
+.contenedor-foto {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.marco-foto {
+    width: 220px;
+    height: 260px;
+    border: 3px solid var(--azul-principal);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1A1A1A, #0F0F0F);
+    position: relative;
+    box-shadow: 0 0 20px rgba(85, 124, 242, 0.3);
+    overflow: hidden;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid var(--rosa-accento);
+    transition: transform 0.3s ease;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05);
+}
+
+.texto-foto {
+    color: var(--rosa-accento);
+    font-size: 0.8rem;
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Efecto de brillo en el marco */
+.marco-foto::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--azul-principal), var(--rosa-accento), var(--verde-terminal), var(--azul-principal));
+    background-size: 400% 400%;
+    border-radius: 10px;
+    z-index: -1;
+    animation: gradient-border 3s ease infinite;
+}
+
+@keyframes gradient-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+    }
+    
+    .columna-derecha {
+        min-width: 100%;
+        order: -1; /* La columna derecha va arriba en móviles */
+    }
+    
+    .nombre {
+        font-size: 1.8rem;
+    }
+    
+    .seccion, .seccion-lateral {
+        padding: 15px;
+    }
+    
+    .marco-foto {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .foto-perfil {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .marco-foto {
+        width: 150px;
+        height: 190px;
+    }
+    
+    .foto-perfil {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .encabezado .contacto {
+        gap: 5px;
+    }
+    
+    .encabezado .item-contacto {
+        font-size: 0.8rem;
+    }
+}
